@@ -1,5 +1,6 @@
 ﻿using PokeApi.Dtos;
 using System.Text.Json.Serialization;
+using Type = PokeApi.Dtos.Type;
 
 namespace PokeApi.Models;
 
@@ -20,6 +21,10 @@ public class PokemonModel
 	[JsonPropertyName("sprites")]
 	public Sprites? Sprites { get; set; }
 
+	[JsonPropertyName("types")]
+	public List<TypeElement>? Types { get; set; }
+
+	[JsonIgnore]
 	[JsonPropertyName("officialArtworkUrl")]
-	public string OfficialArtworkUrl { get; set; }
+	public string? OfficialArtworkUrl { get; set; }
 }
